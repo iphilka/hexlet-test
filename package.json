@@ -1,0 +1,25 @@
+{
+  "name": "work",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sseezov/tst.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sseezov/tst/issues"
+  },
+  "homepage": "https://github.com/sseezov/tst#readme",
+  "dependencies": {
+    "fast-check": "^3.8.0",
+    "jest": "^29.5.0",
+    "lodash": "^4.17.21"
+  }
+}

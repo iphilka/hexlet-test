@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+PATTERN='(?<begin>^[^\n]*?BEGIN.*?$\s*)(?<content>.+?)(?<end>^[^\n]*?END.*?$)'
+# PATTERN='BEGIN'
+# REPLACE='JOPA'
+REPLACE='\\k<begin>\n\\k<end>'
+
+STR="s/$PATTERN/$REPLACE/gms"
+echo $STR
+
+FILES=$(git grep --full-name --name-only '// BEGIN' -- ':!**/replace')
+
+echo $FILES | xargs -n1 -t perl -CSD -Mutf8 -Mfeature=unicode_strings -pi -e "$STR"

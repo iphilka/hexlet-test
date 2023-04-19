@@ -1,0 +1,33 @@
+---
+
+name: test-check
+
+on:
+  push:
+    branches:
+      - source
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [19.x]
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: make install
+      - run: make test
+
+      # - name: Prepare template
+      #   run: ./.github/workflows/scripts/replace.sh
+      #   shell: bash
+      #
+      # - uses: stefanzweifel/git-auto-commit-action@v4
+      #   with:
+      #     branch: main
+      #     commit_message: Generate template for students
