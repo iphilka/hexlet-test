@@ -4,3 +4,4 @@ export default (content) => {
     });
     return data;
 };
+
