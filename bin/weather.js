@@ -18,5 +18,6 @@ const content = fs.readFileSync(path.join(
 ), 'utf-8');
 
 // BEGIN
+solution(content);
 
 // END
